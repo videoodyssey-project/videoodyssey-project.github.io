@@ -8,7 +8,8 @@
     <style>
         /* --- 网页基础样式 --- */
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            /* 使用更现代、干净的系统字体栈 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
@@ -50,14 +51,13 @@
             color: #666;
             margin-bottom: 5px;
         }
-        /* 修改：增加作者超链接的特定颜色和悬停效果 */
         .authors a {
-            color: #4a90e2; /* 学术蓝 */
+            color: #4a90e2; 
             text-decoration: none;
             transition: color 0.2s ease;
         }
         .authors a:hover {
-            color: #2c3e50; /* 悬停时颜色变深 */
+            color: #2c3e50; 
             text-decoration: underline;
         }
         .author-notes {
@@ -133,18 +133,27 @@
             margin-top: 50px;
             margin-bottom: 20px;
         }
+        
+        /* 修改：Introduction 标题样式参考图2 */
         .introduction-title {
             text-align: center;
             border-bottom: none;
+            color: #333333; /* 柔和的深灰色 */
+            font-weight: 600; /* 不要太粗 */
+            font-size: 2.2em; /* 稍微调大一点点 */
+            margin-bottom: 25px;
         }
-        /* 修改：去除块状背景和左侧边框，变为纯文本段落 */
+        
+        /* 修改：Introduction 正文样式参考图2 */
         .introduction-content {
             margin-bottom: 40px;
-            font-size: 1.1em;
-            color: #333; /* 使用标准的深色文本颜色 */
+            font-size: 1.05em; 
+            color: #4b5563; /* 比标题更浅的灰黑色，阅读更舒适 */
             text-align: justify;
-            line-height: 1.7; /* 稍微增加行高，提升大段纯文本的阅读体验 */
+            line-height: 1.75; /* 增加行高，提升大段文字的呼吸感 */
+            font-weight: 400;
         }
+        
         .sub-section-title {
             font-size: 1.6em; 
             font-weight: 500; 
@@ -154,7 +163,7 @@
             text-align: center; 
         }
         
-        /* 特性卡片样式 */
+        /* 保持特性卡片样式 */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
