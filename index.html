@@ -20,16 +20,15 @@
             background-color: #ffffff;
             border-bottom: 1px solid #eaeaea;
         }
-        /* 修改：头部Logo+标题容器样式 */
         .header-logo-title-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px; /* 图标和文字之间的间距 */
+            gap: 15px; 
             margin-bottom: 10px;
         }
         .project-header-logo {
-            width: 70px; /* 图标大小，比Teaser小 */
+            width: 70px; 
             height: auto;
         }
         .project-title {
@@ -51,11 +50,29 @@
             color: #666;
             margin-bottom: 5px;
         }
-        .venue {
+        /* 修改：增加作者超链接的特定颜色和悬停效果 */
+        .authors a {
+            color: #4a90e2; /* 学术蓝 */
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .authors a:hover {
+            color: #2c3e50; /* 悬停时颜色变深 */
+            text-decoration: underline;
+        }
+        .author-notes {
             font-size: 1.1em;
-            color: #888;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .affiliations {
+            font-size: 1.1em;
+            color: #555;
             margin-bottom: 25px;
-            font-style: italic;
+            line-height: 1.6;
+        }
+        .affiliations span {
+            margin: 0 10px; 
         }
         .button-group {
             display: flex;
@@ -103,11 +120,10 @@
             font-size: 0.95em;
             color: #666;
             margin-top: 15px;
-            text-align: center; /* 修改：居中 */
+            text-align: center; 
             line-height: 1.5;
             padding: 0 10px;
         }
-        /* 通用大节标题（用于Datasets, Citation等节） */
         .section-title {
             font-size: 2em;
             font-weight: 600;
@@ -117,35 +133,28 @@
             margin-top: 50px;
             margin-bottom: 20px;
         }
-        /* 修改：Introduction特定标题样式 (居中且取消下划线) */
         .introduction-title {
             text-align: center;
             border-bottom: none;
         }
-        /* 修改：Introduction内容文字样式 (颜色淡化，确保视觉上不加粗) */
+        /* 修改：去除块状背景和左侧边框，变为纯文本段落 */
         .introduction-content {
-            background-color: #f9f9f9;
-            padding: 25px 30px;
-            border-left: 4px solid #363636;
-            border-radius: 0 8px 8px 0;
             margin-bottom: 40px;
             font-size: 1.1em;
-            color: #555; /* 修改：淡化颜色，不使用默认黑 */
+            color: #333; /* 使用标准的深色文本颜色 */
             text-align: justify;
+            line-height: 1.7; /* 稍微增加行高，提升大段纯文本的阅读体验 */
         }
-
-        /* 修改：Key Characteristics子节标题样式 (看起来是跟着上面的话) */
         .sub-section-title {
-            font-size: 1.6em; /* 减小字号 */
-            font-weight: 500; /* 减小权重 */
+            font-size: 1.6em; 
+            font-weight: 500; 
             color: #333;
-            margin-top: 30px; /* 减小上边距 */
+            margin-top: 30px; 
             margin-bottom: 15px;
-            text-align: center; /* 也居中，形成连贯块 */
-            /* 取消 border-bottom */
+            text-align: center; 
         }
         
-        /* 保持特性卡片样式 */
+        /* 特性卡片样式 */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -228,7 +237,7 @@
 
         <h2 class="section-title introduction-title">Introduction</h2>
         <div class="introduction-content">
-            Real-world long video understanding requires models to perform continuous tracking, information integration and memory retention over massive temporal spans within extreme video durations. Mastering this intense cognitive load constitutes the fundamental bottleneck in long video understanding. While existing benchmarks have driven progress by scaling up video duration, their evaluation tasks often require comprehending only short and isolated video segments, falling short of capturing the challenge of ultra-long-context reasoning. To measure this cognitive load, we emphasize \textit{continuous certificate length}, defined as the video length a human must continuously watch to definitively answer a given question. Driven by this metric, we introduce \textbf{\textit{VideoOdyssey}}, a benchmark specifically designed for ultra-long-context and omni-modal video understanding.
+            Real-world long video understanding requires models to perform continuous tracking, information integration and memory retention over massive temporal spans within extreme video durations. Mastering this intense cognitive load constitutes the fundamental bottleneck in long video understanding. While existing benchmarks have driven progress by scaling up video duration, their evaluation tasks often require comprehending only short and isolated video segments, falling short of capturing the challenge of ultra-long-context reasoning. To measure this cognitive load, we emphasize <i>continuous certificate length</i>, defined as the video length a human must continuously watch to definitively answer a given question. Driven by this metric, we introduce <b><i>VideoOdyssey</i></b>, a benchmark specifically designed for ultra-long-context and omni-modal video understanding.
         </div>
 
         <h2 class="sub-section-title">Key Characteristics</h2>
