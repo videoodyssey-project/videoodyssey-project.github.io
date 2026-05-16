@@ -19,10 +19,6 @@
             background-color: #ffffff;
             border-bottom: 1px solid #eaeaea;
         }
-        .project-logo {
-            width: 80px; /* 如果有logo可以取消注释并在HTML中添加img标签 */
-            margin-bottom: 15px;
-        }
         .project-title {
             font-size: 2.8em;
             font-weight: 700;
@@ -37,17 +33,41 @@
             max-width: 800px;
             line-height: 1.4;
         }
+        
+        /* 新增：作者列表样式 */
         .authors {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 5px;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+            color: #333;
         }
-        .venue {
+        .authors a {
+            color: #3498db; /* 模仿图2的蓝色链接风格 */
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .authors a:hover {
+            text-decoration: underline;
+            color: #2980b9;
+        }
+        
+        /* 新增：共一/通讯标注样式 */
+        .author-notes {
             font-size: 1.1em;
-            color: #888;
-            margin-bottom: 25px;
-            font-style: italic;
+            color: #555;
+            margin-bottom: 8px;
         }
+        
+        /* 新增：机构列表样式 */
+        .affiliations {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .affiliations span {
+            margin: 0 10px; /* 机构之间的间距 */
+        }
+
         .button-group {
             display: flex;
             justify-content: center;
@@ -71,7 +91,6 @@
             background-color: #555555;
             transform: translateY(-2px);
         }
-        /* 主体内容区限制宽度居中 */
         .content-section {
             max-width: 900px;
             margin: 40px auto;
@@ -86,8 +105,24 @@
         <h1 class="project-title">🪐 VideoOdyssey</h1>
         <h2 class="project-subtitle">A Benchmark for Ultra-long-context and Omnimodal Video Understanding</h2>
         
-        <div class="authors">Anonymous Authors</div>
-        <div class="venue">Under Double-blind Peer Review</div>
+        <div class="authors">
+            <a href="#">Haichen He</a><sup>1,*</sup>, 
+            <a href="#">Jiayi Zhou</a><sup>1,*</sup>, 
+            <a href="#">Sifeng Shang</a><sup>1</sup>, 
+            <a href="#">Yihan Hu</a><sup>3</sup>, 
+            <a href="#">Yuanhan Zhang</a><sup>2</sup>, 
+            <a href="#">Kaiyang Zhou</a><sup>1,&dagger;</sup>
+        </div>
+
+        <div class="author-notes">
+            <sup>*</sup>Equal Contribution &nbsp;&nbsp;&nbsp; <sup>&dagger;</sup>Corresponding Author
+        </div>
+
+        <div class="affiliations">
+            <span><sup>1</sup>Hong Kong Baptist University</span>
+            <span><sup>2</sup>S-Lab, Nanyang Technological University</span><br>
+            <span><sup>3</sup>GVC Lab, Great Bay University</span>
+        </div>
 
         <div class="button-group">
             <a href="#" class="btn"><i class="fas fa-file-pdf"></i> Paper</a>
