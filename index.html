@@ -6,6 +6,7 @@
     <title>VideoOdyssey Benchmark</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* --- 网页基础样式 --- */
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
@@ -19,10 +20,22 @@
             background-color: #ffffff;
             border-bottom: 1px solid #eaeaea;
         }
+        /* 修改：头部Logo+标题容器样式 */
+        .header-logo-title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px; /* 图标和文字之间的间距 */
+            margin-bottom: 10px;
+        }
+        .project-header-logo {
+            width: 70px; /* 图标大小，比Teaser小 */
+            height: auto;
+        }
         .project-title {
             font-size: 2.8em;
             font-weight: 700;
-            margin: 0 0 10px 0;
+            margin: 0;
             color: #242424;
         }
         .project-subtitle {
@@ -33,41 +46,17 @@
             max-width: 800px;
             line-height: 1.4;
         }
-        
-        /* 新增：作者列表样式 */
         .authors {
-            font-size: 1.3em;
-            margin-bottom: 8px;
-            color: #333;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 5px;
         }
-        .authors a {
-            color: #3498db; /* 模仿图2的蓝色链接风格 */
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .authors a:hover {
-            text-decoration: underline;
-            color: #2980b9;
-        }
-        
-        /* 新增：共一/通讯标注样式 */
-        .author-notes {
+        .venue {
             font-size: 1.1em;
-            color: #555;
-            margin-bottom: 8px;
-        }
-        
-        /* 新增：机构列表样式 */
-        .affiliations {
-            font-size: 1.1em;
-            color: #555;
+            color: #888;
             margin-bottom: 25px;
-            line-height: 1.6;
+            font-style: italic;
         }
-        .affiliations span {
-            margin: 0 10px; /* 机构之间的间距 */
-        }
-
         .button-group {
             display: flex;
             justify-content: center;
@@ -97,6 +86,8 @@
             padding: 0 20px;
             line-height: 1.6;
         }
+
+        /* --- 网页主体内容区追加样式 --- */
         .teaser-container {
             text-align: center;
             margin-bottom: 40px;
@@ -112,10 +103,11 @@
             font-size: 0.95em;
             color: #666;
             margin-top: 15px;
-            text-align: justify;
+            text-align: center; /* 修改：居中 */
             line-height: 1.5;
             padding: 0 10px;
         }
+        /* 通用大节标题（用于Datasets, Citation等节） */
         .section-title {
             font-size: 2em;
             font-weight: 600;
@@ -125,30 +117,35 @@
             margin-top: 50px;
             margin-bottom: 20px;
         }
-        .section-content p {
-            font-size: 1.1em;
-            color: #444;
-            margin-bottom: 20px;
-            text-align: justify;
+        /* 修改：Introduction特定标题样式 (居中且取消下划线) */
+        .introduction-title {
+            text-align: center;
+            border-bottom: none;
         }
-        .highlight-text {
-            background-color: #f0f7ff;
-            padding: 2px 6px;
-            border-radius: 4px;
-            color: #0366d6;
-            font-weight: 600;
-        }
-        /* --- Abstract 与 特性卡片样式 --- */
-        .abstract-content {
+        /* 修改：Introduction内容文字样式 (颜色淡化，确保视觉上不加粗) */
+        .introduction-content {
             background-color: #f9f9f9;
             padding: 25px 30px;
             border-left: 4px solid #363636;
             border-radius: 0 8px 8px 0;
             margin-bottom: 40px;
             font-size: 1.1em;
-            color: #444;
+            color: #555; /* 修改：淡化颜色，不使用默认黑 */
             text-align: justify;
         }
+
+        /* 修改：Key Characteristics子节标题样式 (看起来是跟着上面的话) */
+        .sub-section-title {
+            font-size: 1.6em; /* 减小字号 */
+            font-weight: 500; /* 减小权重 */
+            color: #333;
+            margin-top: 30px; /* 减小上边距 */
+            margin-bottom: 15px;
+            text-align: center; /* 也居中，形成连贯块 */
+            /* 取消 border-bottom */
+        }
+        
+        /* 保持特性卡片样式 */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -188,50 +185,38 @@
 <body>
 
     <div class="header-container">
-        <h1 class="project-title">VideoOdyssey</h1>
-        <h2 class="project-subtitle">A Benchmark for Ultra-long-context and Omni-Modal Video Understanding</h2>
+        <div class="header-logo-title-container">
+            <img src="image_5.png" alt="VideoOdyssey Logo" class="project-header-logo">
+            <h1 class="project-title">VideoOdyssey</h1>
+        </div>
+        <h2 class="project-subtitle">A Benchmark for Ultra-long-context and Omnimodal Video Understanding</h2>
         
-        <div class="authors">
-            <a href="https://haichenhe.github.io/">Haichen He</a><sup>1,*</sup>, 
-            <a href="https://zhoujiayi003.github.io/">Jiayi Zhou</a><sup>1,*</sup>, 
-            <a href="https://sifengshang.github.io/">Sifeng Shang</a><sup>1</sup>, 
-            <a href="https://scholar.google.com/citations?user=UP2IgWIAAAAJ&hl=zh-CN&oi=ao">Yihan Hu</a><sup>3</sup>, 
-            <a href="https://zhangyuanhan-ai.github.io/">Yuanhan Zhang</a><sup>2</sup>, 
-            <a href="https://kaiyangzhou.github.io/">Kaiyang Zhou</a><sup>1,&dagger;</sup>
-        </div>
-
-        <div class="author-notes">
-            <sup>*</sup>Equal Contribution &nbsp;&nbsp;&nbsp; <sup>&dagger;</sup>Corresponding Author
-        </div>
-
-        <div class="affiliations">
-            <span><sup>1</sup>Hong Kong Baptist University</span>
-            <span><sup>2</sup>S-Lab, Nanyang Technological University</span><br>
-            <span><sup>3</sup>GVC Lab, Great Bay University</span>
-        </div>
+        <div class="authors">Anonymous Authors</div>
+        <div class="venue">Under Double-blind Peer Review</div>
 
         <div class="button-group">
             <a href="#" class="btn"><i class="fas fa-file-pdf"></i> Paper</a>
-            <a href="#" target="_blank" class="btn"><i class="fab fa-github"></i> Code</a>
-            <a href="https://huggingface.co/datasets/maifoundations/VideoOdyssey" class="btn"><i class="fas fa-database"></i> Dataset</a>
+            <a href="https://github.com/videoodyssey-project" target="_blank" class="btn"><i class="fab fa-github"></i> Code</a>
+            <a href="#" class="btn"><i class="fas fa-database"></i> Dataset</a>
             <a href="#leaderboard" class="btn"><i class="fas fa-trophy"></i> Leaderboard</a>
         </div>
     </div>
 
     <div class="content-section">
+        
         <div class="teaser-container">
-            <img src="example.png" alt="VideoOdyssey Teaser Example" class="teaser-img">
+            <img src="image_21.png" alt="VideoOdyssey Teaser Example" class="teaser-img">
             <p class="caption">
-                <b>Examples from VideoOdyssey benchmark.
+                Figure 1: An illustrative example from the VideoOdyssey benchmark. Our dataset focuses on complex omnimodal reasoning tasks where the evidence spans extended periods. Unlike traditional metrics, our evaluation is grounded in the Continuous Temporal Certificate Length, measuring the continuous span from the first evidence point to the last.
             </p>
         </div>
 
-        <h2 class="section-title">Abstract</h2>
-        <div class="abstract-content">
-            Real-world long video understanding requires models to perform continuous tracking, information integration and memory retention over massive temporal spans within extreme video durations. Mastering this intense cognitive load constitutes the fundamental bottleneck in long video understanding. While existing benchmarks have driven progress by scaling up video duration, their evaluation tasks often require comprehending only short and isolated video segments, falling short of capturing the challenge of ultra-long-context reasoning. To measure this cognitive load, we emphasize <i>continuous certificate length</i>, defined as the video length a human must continuously watch to definitively answer a given question. Driven by this metric, we introduce <b><i>VideoOdyssey</i></b>, a benchmark specifically designed for ultra-long-context and omni-modal video understanding.
+        <h2 class="section-title introduction-title">Introduction</h2>
+        <div class="introduction-content">
+            Real-world long video understanding requires models to perform continuous tracking, information integration and memory retention over massive temporal spans within extreme video durations. Mastering this intense cognitive load constitutes the fundamental bottleneck in long video understanding. While existing benchmarks have driven progress by scaling up video duration, their evaluation tasks often require comprehending only short and isolated video segments, falling short of capturing the challenge of ultra-long-context reasoning. To measure this cognitive load, we emphasize \textit{continuous certificate length}, defined as the video length a human must continuously watch to definitively answer a given question. Driven by this metric, we introduce \textbf{\textit{VideoOdyssey}}, a benchmark specifically designed for ultra-long-context and omni-modal video understanding.
         </div>
 
-        <h2 class="section-title">Key Characteristics</h2>
+        <h2 class="sub-section-title">Key Characteristics</h2>
         <div class="features-grid">
             
             <div class="feature-card">
@@ -253,7 +238,8 @@
             </div>
             
         </div>
-        </div>
+
+    </div>
 
 </body>
 </html>
