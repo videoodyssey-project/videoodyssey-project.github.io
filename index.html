@@ -7,11 +7,8 @@
   <title>VideoOdyssey Benchmark</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
   <style>
@@ -53,9 +50,7 @@
       margin-bottom: 15px;
     }
 
-    /* ==========================================
-       修改部分：药丸按钮的活泼配色与发光样式
-       ========================================== */
+    /* 药丸按钮的活泼配色与发光样式 */
     .publication-links .button.is-rounded {
       border: none;
       color: #ffffff !important;
@@ -137,7 +132,7 @@
               <span style="vertical-align: middle">VideoOdyssey</span>
             </h1>
             <h2 class="subtitle is-3 publication-subtitle" style="margin-bottom: 20px;">
-              A Benchmark for Ultra-long-context <br> and Omni-Modal Video Understanding
+              A Benchmark for Ultra-long-context <br> and Omnimodal Video Understanding
             </h2>
 
             <div class="is-size-5 publication-authors">
@@ -219,15 +214,13 @@
     <div class="container" style="margin-bottom: 2vh;">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
           <img src="example.png" alt="VideoOdyssey Teaser Example" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px;" />
           <p style="color: #666; margin-bottom: 40px;">Examples from VideoOdyssey. Models need to consistently attend to detailed cues and build continuous logical chain of events across ultra-long time spans.</p>
           
           <h2 class="title is-3">Introduction</h2>
           <div class="content has-text-justified" style="font-size: 1.05em; line-height: 1.5;">
-            Real-world long video understanding requires models to perform continuous tracking, information integration and memory retention over massive temporal spans within extreme video durations.  Mastering this intense cognitive load constitutes the fundamental bottleneck in long video understanding. While existing benchmarks have driven progress by scaling up video duration, their evaluation tasks often require comprehending only short and isolated video segments, falling short of capturing the challenge of ultra-long-context reasoning. To measure this cognitive load, we emphasize <i>continuous certificate length</i>, defined as the video length a human must continuously watch to definitively answer a given question. Driven by this metric, we introduce <b><i>VideoOdyssey</i></b>, a benchmark specifically designed for ultra-long-context and omni-modal video understanding. <i>VideoOdyssey</i> is characterized by three key features: <b>1) Extreme video duration and diversity:</b> spanning 11 domains and 54 subcategories with an average video duration of 109 minutes; <b>2) Comprehensive evaluation scenarios:</b> offering two subsets to address different research focuses, i.e., <i>VideoOdyssey-V</i> for probing the limits of visual understanding in MLLMs, and <i>VideoOdyssey-AV</i> for evaluating synchronized audio-visual understanding for omni-modal models; <b>3) Ultra-long and multi-level continuous certificates:</b> extending the average continuous certificate to 16 minutes for <i>VideoOdyssey-V</i> and 12.8 minutes for <i>VideoOdyssey-AV</i>. Crucially, we design 5 granular levels from seconds to hours, providing a comprehensive diagnostic tool to evaluate models across varying context lengths and cognitive loads. Extensive evaluations show that bottlenecks of current MLLMs extend beyond simple retrieval to include struggles with continuous reasoning across varying context lengths, fine-grained perception, and non-verbal omni-modal understanding. We hope <i>VideoOdyssey</i> will spur the development of next-generation MLLMs toward genuine real-world video understanding.
+            Real-world long video understanding requires models to perform continuous tracking, information integration and memory retention over massive temporal spans within extreme video durations. Mastering this intense cognitive load constitutes the fundamental bottleneck in long video understanding. While existing benchmarks have driven progress by scaling up video duration, their evaluation tasks often require comprehending only short and isolated video segments, falling short of capturing the challenge of ultra-long-context reasoning. To measure this cognitive load, we emphasize <i>continuous certificate length</i>, defined as the video length a human must continuously watch to definitively answer a given question. Driven by this metric, we introduce <b><i>VideoOdyssey</i></b>, a benchmark specifically designed for ultra-long-context and omni-modal video understanding. <i>VideoOdyssey</i> is characterized by three key features: <b>1) Extreme video duration and diversity:</b> spanning 11 domains and 54 subcategories with an average video duration of 109 minutes; <b>2) Comprehensive evaluation scenarios:</b> offering two subsets to address different research focuses, i.e., <i>VideoOdyssey-V</i> for probing the limits of visual understanding in MLLMs, and <i>VideoOdyssey-AV</i> for evaluating synchronized audio-visual understanding for omni-modal models; <b>3) Ultra-long and multi-level continuous certificates:</b> extending the average continuous certificate to 16 minutes for <i>VideoOdyssey-V</i> and 12.8 minutes for <i>VideoOdyssey-AV</i>. Crucially, we design 5 granular levels from seconds to hours, providing a comprehensive diagnostic tool to evaluate models across varying context lengths and cognitive loads. Extensive evaluations show that bottlenecks of current MLLMs extend beyond simple retrieval to include struggles with continuous reasoning across varying context lengths, fine-grained perception, and non-verbal omni-modal understanding. We hope <i>VideoOdyssey</i> will spur the development of next-generation MLLMs toward genuine real-world video understanding.
           </div>
-          
         </div>
       </div>
     </div>
@@ -307,6 +300,28 @@
                   <td>-</td>
                   <td class="overall-score">-</td>
                 </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="model-name"><a href="https://internvl.github.io/blog/2024-12-05-InternVL-2.5/" target="_blank">InternVL2.5</a></td>
+                  <td>Max</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td class="overall-score">-</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="model-name"><a href="https://qwenlm.github.io/blog/qwen2.5-omni/" target="_blank">Qwen 2.5 Omni</a></td>
+                  <td>Max</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td class="overall-score">-</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -351,8 +366,30 @@
                 </tr>
                 <tr>
                   <td>3</td>
+                  <td class="model-name"><a href="https://qwenlm.github.io/blog/qwen2.5-omni/" target="_blank">Qwen 2.5 Omni</a></td>
+                  <td>64</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td class="overall-score">-</td>
+                </tr>
+                <tr>
+                  <td>4</td>
                   <td class="model-name"><a href="https://github.com/VITA-MLLM/VITA" target="_blank">VITA-1.5-7B</a></td>
                   <td>16</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td class="overall-score">-</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="model-name"><a href="https://qwenlm.github.io/zh/blog/qwen2-audio/" target="_blank">Qwen2-Audio</a></td>
+                  <td>64</td>
                   <td>-</td>
                   <td>-</td>
                   <td>-</td>
@@ -413,7 +450,7 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <pre><code>@article{anonymous2024videoodyssey,
-  title={VideoOdyssey: A Benchmark for Ultra-long-context and Omni-modal Video Understanding},
+  title={VideoOdyssey: A Benchmark for Ultra-long-context and Omnimodal Video Understanding},
   author={Anonymous Authors},
   journal={Under Review},
   year={2024}
