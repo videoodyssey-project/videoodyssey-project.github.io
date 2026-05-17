@@ -198,43 +198,10 @@
           
           <h2 class="title is-3">Introduction</h2>
           <div class="content has-text-justified" style="font-size: 1.1em; line-height: 1.7;">
-            Real-world long video understanding requires models to perform continuous tracking, information integration and memory retention over massive temporal spans within extreme video durations. Mastering this intense cognitive load constitutes the fundamental bottleneck in long video understanding. While existing benchmarks have driven progress by scaling up video duration, their evaluation tasks often require comprehending only short and isolated video segments, falling short of capturing the challenge of ultra-long-context reasoning. To measure this cognitive load, we emphasize <i>continuous certificate length</i>, defined as the video length a human must continuously watch to definitively answer a given question. Driven by this metric, we introduce <b><i>VideoOdyssey</i></b>, a benchmark specifically designed for ultra-long-context and omni-modal video understanding.
+            Real-world long video understanding requires models to perform continuous tracking, information integration and memory retention over massive temporal spans within extreme video durations.  Mastering this intense cognitive load constitutes the fundamental bottleneck in long video understanding. While existing benchmarks have driven progress by scaling up video duration, their evaluation tasks often require comprehending only short and isolated video segments, falling short of capturing the challenge of ultra-long-context reasoning. To measure this cognitive load, we emphasize <i>continuous certificate length</i>, defined as the video length a human must continuously watch to definitively answer a given question. Driven by this metric, we introduce <b><i>VideoOdyssey</i></b>, a benchmark specifically designed for ultra-long-context and omni-modal video understanding. <i>VideoOdyssey</i> is characterized by three key features: <b>1) Extreme video duration and diversity:</b> spanning 11 domains and 54 subcategories with an average video duration of 109 minutes; <b>2) Comprehensive evaluation scenarios:</b> offering two subsets to address different research focuses, i.e., <i>VideoOdyssey-V</i> for probing the limits of visual understanding in MLLMs, and <i>VideoOdyssey-AV</i> for evaluating synchronized audio-visual understanding for omni-modal models; <b>3) Ultra-long and multi-level continuous certificates:</b> extending the average continuous certificate to 16 minutes for <i>VideoOdyssey-V</i> and 12.8 minutes for <i>VideoOdyssey-AV</i>. Crucially, we design 5 granular levels from seconds to hours, providing a comprehensive diagnostic tool to evaluate models across varying context lengths and cognitive loads. Extensive evaluations show that bottlenecks of current MLLMs extend beyond simple retrieval to include struggles with continuous reasoning across varying context lengths, fine-grained perception, and non-verbal omni-modal understanding. We hope <i>VideoOdyssey</i> will spur the development of next-generation MLLMs toward genuine real-world video understanding.
           </div>
           
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section has-background-light">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered" style="margin-bottom: 40px;">Key Characteristics</h2>
-      <div class="columns is-centered">
-        
-        <div class="column is-one-third">
-          <div class="box has-text-centered" style="height: 100%;">
-            <div class="feature-icon"><i class="fas fa-clock"></i></div>
-            <h3 class="title is-5">Extreme Duration</h3>
-            <p class="content has-text-justified">Spanning 11 domains and 54 subcategories with an average video duration of <b>109 minutes</b>.</p>
-          </div>
-        </div>
-
-        <div class="column is-one-third">
-          <div class="box has-text-centered" style="height: 100%;">
-            <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
-            <h3 class="title is-5">Comprehensive Scenarios</h3>
-            <p class="content has-text-justified">Offering distinct subsets: <i>VideoOdyssey-V</i> for visual limits, and <i>VideoOdyssey-AV</i> for synchronized audio-visual understanding.</p>
-          </div>
-        </div>
-
-        <div class="column is-one-third">
-          <div class="box has-text-centered" style="height: 100%;">
-            <div class="feature-icon"><i class="fas fa-ruler-horizontal"></i></div>
-            <h3 class="title is-5">Multi-level Certificates</h3>
-            <p class="content has-text-justified">Extending average continuous certificate to 16 mins (V) and 12.8 mins (AV) to evaluate varying cognitive loads.</p>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
