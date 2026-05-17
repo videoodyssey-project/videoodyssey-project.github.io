@@ -5,22 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VideoOdyssey Benchmark</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    
     <style>
         /* --- 网页基础样式 --- */
         body {
-            /* 修改：全局应用 Inter 字体 */
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            /* 修改：全局正文使用 Noto Sans */
+            font-family: 'Noto Sans', sans-serif;
             margin: 0;
             padding: 0;
-            color: #4b5563; /* 柔和的全局文本色 */
+            color: #4b5563; 
             background-color: #fafafa;
-            /* 提升字体的平滑度（特别是 Mac 上） */
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+
+        /* 新增：所有的标题统一使用 Google Sans，提升学术科技感 */
+        .project-title,
+        .project-subtitle,
+        .section-title,
+        .introduction-title,
+        .sub-section-title,
+        .feature-card h3 {
+            font-family: 'Google Sans', sans-serif;
+        }
+
         .header-container {
             text-align: center;
             padding: 60px 20px 40px;
@@ -40,7 +50,7 @@
         }
         .project-title {
             font-size: 2.8em;
-            font-weight: 600; /* 修改：稍微降低主标题字重，显得更精致 */
+            font-weight: 700; /* Google Sans 较细，可以恢复为 700 */
             margin: 0;
             color: #333333; 
         }
@@ -104,7 +114,7 @@
             transform: translateY(-2px);
         }
         .content-section {
-            max-width: 900px; /* 适当控制最大宽度，避免大屏文字太宽 */
+            max-width: 900px; 
             margin: 40px auto;
             padding: 0 20px;
             line-height: 1.6;
@@ -140,37 +150,33 @@
             margin-bottom: 20px;
         }
         
-        /* Introduction 标题 */
         .introduction-title {
             text-align: center;
             border-bottom: none;
             color: #333333; 
             font-weight: 600; 
             font-size: 2.2em; 
-            margin-bottom: 30px; /* 稍微拉开与正文的距离 */
+            margin-bottom: 30px; 
         }
         
-        /* Introduction 正文 */
         .introduction-content {
             margin-bottom: 40px;
             font-size: 1.05em; 
-            color: #4b5563; /* 参考截图中非常有质感的深灰色 */
+            color: #4b5563; 
             text-align: justify;
-            line-height: 1.85; /* 参考截图，进一步增大行高，提升阅读舒适度 */
+            line-height: 1.85; 
             font-weight: 400;
         }
         
-        /* 子标题 */
         .sub-section-title {
             font-size: 1.6em; 
-            font-weight: 500; 
+            font-weight: 600; /* 配合 Google Sans 加粗一点点 */
             color: #333333;
             margin-top: 40px; 
             margin-bottom: 20px;
             text-align: center; 
         }
         
-        /* 特性卡片样式 */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
