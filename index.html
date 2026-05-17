@@ -52,6 +52,49 @@
       color: #363636;
       margin-bottom: 15px;
     }
+
+    /* ==========================================
+       修改部分：药丸按钮的活泼配色与发光样式
+       ========================================== */
+    .publication-links .button.is-rounded {
+      border: none;
+      color: #ffffff !important;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .publication-links .button.is-rounded:hover {
+      transform: translateY(-2px);
+    }
+    
+    .btn-paper {
+      background: linear-gradient(135deg, #0d47a1, #1976d2);
+      box-shadow: 0 4px 15px rgba(25, 118, 210, 0.4);
+    }
+    .btn-paper:hover { box-shadow: 0 6px 20px rgba(25, 118, 210, 0.6); }
+
+    .btn-arxiv {
+      background: linear-gradient(135deg, #b71c1c, #e53935);
+      box-shadow: 0 4px 15px rgba(229, 57, 53, 0.4);
+    }
+    .btn-arxiv:hover { box-shadow: 0 6px 20px rgba(229, 57, 53, 0.6); }
+
+    .btn-code {
+      background: linear-gradient(135deg, #00b09b, #10b981);
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    }
+    .btn-code:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6); }
+
+    .btn-dataset {
+      background: linear-gradient(135deg, #f57f17, #f59e0b);
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+    }
+    .btn-dataset:hover { box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6); }
+
+    .btn-leaderboard {
+      background: linear-gradient(135deg, #b48600, #d4af37);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    }
+    .btn-leaderboard:hover { box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6); }
   </style>
 </head>
 
@@ -105,15 +148,7 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <a href="#" class="external-link button is-normal is-rounded btn-arxiv">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -121,7 +156,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://github.com/videoodyssey-project" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/videoodyssey-project" class="external-link button is-normal is-rounded btn-code">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -129,7 +164,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <a href="#" class="external-link button is-normal is-rounded btn-dataset">
                     <span class="icon">
                       <p style="font-size:18px">🤗</p>
                     </span>
@@ -137,7 +172,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="#leaderboard" class="external-link button is-normal is-rounded is-dark">
+                  <a href="#leaderboard" class="external-link button is-normal is-rounded btn-leaderboard">
                     <span class="icon">
                       <p style="font-size:18px">🏆</p>
                     </span>
