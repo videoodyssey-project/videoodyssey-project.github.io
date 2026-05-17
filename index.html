@@ -1,313 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VideoOdyssey Benchmark</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VideoOdyssey Benchmark</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    /* 全局字体设置 */
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+    .title, .subtitle, h1, h2, h3, h4, h5, h6 {
+      font-family: 'Google Sans', sans-serif;
+    }
     
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    /* 作者列表样式微调 */
+    .publication-authors {
+      margin-bottom: 5px;
+    }
+    .author-block {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .author-block a {
+      color: #3273dc;
+    }
+    .author-block a:hover {
+      text-decoration: underline;
+    }
     
-    <style>
-        /* --- 网页基础样式 --- */
-        body {
-            /* 修改：全局正文使用 Noto Sans */
-            font-family: 'Noto Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #4b5563; 
-            background-color: #fafafa;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* 新增：所有的标题统一使用 Google Sans，提升学术科技感 */
-        .project-title,
-        .project-subtitle,
-        .section-title,
-        .introduction-title,
-        .sub-section-title,
-        .feature-card h3 {
-            font-family: 'Google Sans', sans-serif;
-        }
-
-        .header-container {
-            text-align: center;
-            padding: 60px 20px 40px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #eaeaea;
-        }
-        .header-logo-title-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px; 
-            margin-bottom: 10px;
-        }
-        .project-header-logo {
-            width: 70px; 
-            height: auto;
-        }
-        .project-title {
-            font-size: 2.8em;
-            font-weight: 700; /* Google Sans 较细，可以恢复为 700 */
-            margin: 0;
-            color: #333333; 
-        }
-        .project-subtitle {
-            font-size: 1.5em;
-            font-weight: 400;
-            color: #555555; 
-            margin: 0 auto 20px auto;
-            max-width: 800px;
-            line-height: 1.5;
-        }
-        .authors {
-            font-size: 1.2em;
-            color: #555555; 
-            margin-bottom: 5px;
-        }
-        .authors a {
-            color: #4a90e2; 
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        .authors a:hover {
-            color: #2c3e50; 
-            text-decoration: underline;
-        }
-        .author-notes {
-            font-size: 1.1em;
-            color: #666666; 
-            margin-bottom: 8px;
-        }
-        .affiliations {
-            font-size: 1.1em;
-            color: #666666; 
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-        .affiliations span {
-            margin: 0 10px; 
-        }
-        .button-group {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
-        }
-        .btn {
-            background-color: #363636;
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 1.05em;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-        }
-        .btn:hover {
-            background-color: #555555;
-            transform: translateY(-2px);
-        }
-        .content-section {
-            max-width: 900px; 
-            margin: 40px auto;
-            padding: 0 20px;
-            line-height: 1.6;
-        }
-
-        /* --- 网页主体内容区追加样式 --- */
-        .teaser-container {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .teaser-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border: 1px solid #eaeaea;
-        }
-        .caption {
-            font-size: 0.95em;
-            color: #6b7280; 
-            margin-top: 15px;
-            text-align: center; 
-            line-height: 1.5;
-            padding: 0 10px;
-        }
-        .section-title {
-            font-size: 2em;
-            font-weight: 600;
-            color: #333333;
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 10px;
-            margin-top: 50px;
-            margin-bottom: 20px;
-        }
-        
-        .introduction-title {
-            text-align: center;
-            border-bottom: none;
-            color: #333333; 
-            font-weight: 600; 
-            font-size: 2.2em; 
-            margin-bottom: 30px; 
-        }
-        
-        .introduction-content {
-            margin-bottom: 40px;
-            font-size: 1.05em; 
-            color: #4b5563; 
-            text-align: justify;
-            line-height: 1.85; 
-            font-weight: 400;
-        }
-        
-        .sub-section-title {
-            font-size: 1.6em; 
-            font-weight: 600; /* 配合 Google Sans 加粗一点点 */
-            color: #333333;
-            margin-top: 40px; 
-            margin-bottom: 20px;
-            text-align: center; 
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        .feature-card {
-            background: #ffffff;
-            border: 1px solid #eaeaea;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03); 
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
-        .feature-icon {
-            font-size: 2em;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-        .feature-card h3 {
-            font-size: 1.2em;
-            margin: 0 0 10px 0;
-            color: #333333; 
-            font-weight: 600;
-        }
-        .feature-card p {
-            font-size: 0.95em;
-            color: #4b5563; 
-            margin: 0;
-            line-height: 1.6;
-        }
-        
-        .image-block {
-            margin-bottom: 50px;
-            text-align: center;
-        }
-        .image-block img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-    </style>
+    /* 按钮外边距 */
+    .publication-links {
+      margin-top: 25px;
+    }
+    .link-block {
+      margin: 5px;
+    }
+    
+    /* 特性卡片内的图标大小 */
+    .feature-icon {
+      font-size: 2.5rem;
+      color: #363636;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="header-container">
-        <div class="header-logo-title-container">
-            <h1 class="project-title">VideoOdyssey</h1>
-        </div>
-        <h2 class="project-subtitle">A Benchmark for Ultra-long-context and Omnimodal Video Understanding</h2>
-        
-        <div class="authors">
-            <a href="https://haichenhe.github.io/">Haichen He</a><sup>1,*</sup>, 
-            <a href="https://zhoujiayi003.github.io/">Jiayi Zhou</a><sup>1,*</sup>, 
-            <a href="https://sifengshang.github.io/">Sifeng Shang</a><sup>1</sup>, 
-            <a href="https://scholar.google.com/citations?user=UP2IgWIAAAAJ&hl=zh-CN&oi=ao">Yihan Hu</a><sup>3</sup>, 
-            <a href="https://zhangyuanhan-ai.github.io/">Yuanhan Zhang</a><sup>2</sup>, 
-            <a href="https://kaiyangzhou.github.io/">Kaiyang Zhou</a><sup>1,&dagger;</sup>
-        </div>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            
+            <h1 class="title is-1 publication-title">
+              <span style="vertical-align: middle">VideoOdyssey</span>
+            </h1>
+            <h2 class="subtitle is-3 publication-subtitle" style="margin-bottom: 20px;">
+              A Benchmark for Ultra-long-context <br> and Omnimodal Video Understanding
+            </h2>
 
-        <div class="author-notes">
-            <sup>*</sup>Equal Contribution &nbsp;&nbsp;&nbsp; <sup>&dagger;</sup>Corresponding Author
-        </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://haichenhe.github.io/">Haichen He</a><sup>1,*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://zhoujiayi003.github.io/">Jiayi Zhou</a><sup>1,*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://sifengshang.github.io/">Sifeng Shang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=UP2IgWIAAAAJ&hl=zh-CN&oi=ao">Yihan Hu</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://zhangyuanhan-ai.github.io/">Yuanhan Zhang</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://kaiyangzhou.github.io/">Kaiyang Zhou</a><sup>1,&dagger;</sup>
+              </span>
+            </div>
 
-        <div class="affiliations">
-            <span><sup>1</sup>Hong Kong Baptist University</span>
-            <span><sup>2</sup>S-Lab, Nanyang Technological University</span><br>
-            <span><sup>3</sup>GVC Lab, Great Bay University</span>
-        </div>
+            <div class="is-size-6 publication-authors" style="color: #666; margin-top: 10px;">
+              <span class="author-block"><sup>*</sup>Equal Contribution</span>
+              <span class="author-block"><sup>&dagger;</sup>Corresponding Author</span>
+            </div>
 
-        <div class="button-group">
-            <a href="#" class="btn"><i class="fas fa-file-pdf"></i> Paper</a>
-            <a href="https://github.com/videoodyssey-project" target="_blank" class="btn"><i class="fab fa-github"></i> Code</a>
-            <a href="#" class="btn"><i class="fas fa-database"></i> Dataset</a>
-            <a href="#leaderboard" class="btn"><i class="fas fa-trophy"></i> Leaderboard</a>
+            <div class="is-size-6 publication-authors" style="color: #666;">
+              <span class="author-block"><sup>1</sup>Hong Kong Baptist University</span>&nbsp;&nbsp;
+              <span class="author-block"><sup>2</sup>S-Lab, Nanyang Technological University</span>&nbsp;&nbsp;
+              <span class="author-block"><sup>3</sup>GVC Lab, Great Bay University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/videoodyssey-project" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#leaderboard" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                    </span>
+                    <span>Leaderboard</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+          </div>
         </div>
+      </div>
     </div>
+  </section>
 
-    <div class="content-section">
-        
-        <div class="teaser-container">
-            <img src="example.png" alt="VideoOdyssey Teaser Example" class="teaser-img">
-            <p class="caption">
-                Examples from VideoOdyssey benchmark.
-            </p>
-        </div>
-
-        <h2 class="section-title introduction-title">Introduction</h2>
-        <div class="introduction-content">
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <img src="example.png" alt="VideoOdyssey Teaser Example" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px;" />
+          <p style="color: #666; margin-bottom: 40px;">Examples from VideoOdyssey benchmark.</p>
+          
+          <h2 class="title is-3">Introduction</h2>
+          <div class="content has-text-justified" style="font-size: 1.1em; line-height: 1.7;">
             Real-world long video understanding requires models to perform continuous tracking, information integration and memory retention over massive temporal spans within extreme video durations. Mastering this intense cognitive load constitutes the fundamental bottleneck in long video understanding. While existing benchmarks have driven progress by scaling up video duration, their evaluation tasks often require comprehending only short and isolated video segments, falling short of capturing the challenge of ultra-long-context reasoning. To measure this cognitive load, we emphasize <i>continuous certificate length</i>, defined as the video length a human must continuously watch to definitively answer a given question. Driven by this metric, we introduce <b><i>VideoOdyssey</i></b>, a benchmark specifically designed for ultra-long-context and omni-modal video understanding.
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: 40px;">Key Characteristics</h2>
+      <div class="columns is-centered">
+        
+        <div class="column is-one-third">
+          <div class="box has-text-centered" style="height: 100%;">
+            <div class="feature-icon"><i class="fas fa-clock"></i></div>
+            <h3 class="title is-5">Extreme Duration</h3>
+            <p class="content has-text-justified">Spanning 11 domains and 54 subcategories with an average video duration of <b>109 minutes</b>.</p>
+          </div>
         </div>
 
-        <h2 class="sub-section-title">Key Characteristics</h2>
-        <div class="features-grid">
-            
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-clock"></i></div>
-                <h3>Extreme Duration & Diversity</h3>
-                <p>Spanning 11 domains and 54 subcategories with an average video duration of <b>109 minutes</b>.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
-                <h3>Comprehensive Scenarios</h3>
-                <p>Offering two distinct subsets: <i>VideoOdyssey-V</i> for probing visual limits, and <i>VideoOdyssey-AV</i> for synchronized audio-visual understanding.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-ruler-horizontal"></i></div>
-                <h3>Multi-level Certificates</h3>
-                <p>Extending average continuous certificate to 16 mins (V) and 12.8 mins (AV). Features 5 granular levels from seconds to hours to evaluate cognitive loads.</p>
-            </div>
-            
+        <div class="column is-one-third">
+          <div class="box has-text-centered" style="height: 100%;">
+            <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+            <h3 class="title is-5">Comprehensive Scenarios</h3>
+            <p class="content has-text-justified">Offering distinct subsets: <i>VideoOdyssey-V</i> for visual limits, and <i>VideoOdyssey-AV</i> for synchronized audio-visual understanding.</p>
+          </div>
         </div>
 
-        <h2 class="sub-section-title">Benchmark Statistics</h2>
-        <div class="image-block">
-            <img src="benchmark_statistics.png" alt="VideoOdyssey Benchmark Statistics">
+        <div class="column is-one-third">
+          <div class="box has-text-centered" style="height: 100%;">
+            <div class="feature-icon"><i class="fas fa-ruler-horizontal"></i></div>
+            <h3 class="title is-5">Multi-level Certificates</h3>
+            <p class="content has-text-justified">Extending average continuous certificate to 16 mins (V) and 12.8 mins (AV) to evaluate varying cognitive loads.</p>
+          </div>
         </div>
 
-        <h2 class="sub-section-title">Comparison with Existing Benchmarks</h2>
-        <div class="image-block">
-            <img src="benchmark_comparison.png" alt="Comparison Table and Bubble Chart">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths" style="width: 100%;">
+          <h2 class="title is-3">Benchmark Statistics</h2>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="benchmark_statistics.png" alt="Benchmark Statistics" width="90%" />
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered" style="margin-top: 40px;">
+        <div class="column is-four-fifths" style="width: 100%;">
+          <h2 class="title is-3">Comparison with Existing Benchmarks</h2>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="benchmark_comparison.png" alt="Benchmark Comparison" width="100%" />
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-3" id="citation">Citation</h1>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <pre><code>@article{anonymous2024videoodyssey,
+  title={VideoOdyssey: A Benchmark for Ultra-long-context and Omnimodal Video Understanding},
+  author={Anonymous Authors},
+  journal={Under Review},
+  year={2024}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a href="https://jaaackhongggg.github.io/WorldSense/">WorldSense</a>, licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+      </p>
+    </div>
+  </footer>
 
 </body>
 </html>
