@@ -8,11 +8,12 @@
     <style>
         /* --- 网页基础样式 --- */
         body {
-            /* 使用更现代、干净的系统字体栈 */
+            /* 使用现代无衬线字体 */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
+            /* 修改：基础字体颜色变浅变柔和 */
+            color: #555555; 
             background-color: #fafafa;
         }
         .header-container {
@@ -36,22 +37,26 @@
             font-size: 2.8em;
             font-weight: 700;
             margin: 0;
-            color: #242424;
+            /* 修改：主标题不再纯黑，使用柔和的深灰 */
+            color: #3c4043; 
         }
         .project-subtitle {
             font-size: 1.5em;
             font-weight: 400;
-            color: #555;
+            /* 修改：副标题稍微再浅一点 */
+            color: #5f6368; 
             margin: 0 auto 20px auto;
             max-width: 800px;
             line-height: 1.4;
         }
         .authors {
             font-size: 1.2em;
-            color: #666;
+            /* 修改：作者列表颜色统一为柔和灰 */
+            color: #5f6368; 
             margin-bottom: 5px;
         }
         .authors a {
+            /* 保持学术蓝 */
             color: #4a90e2; 
             text-decoration: none;
             transition: color 0.2s ease;
@@ -62,12 +67,14 @@
         }
         .author-notes {
             font-size: 1.1em;
-            color: #555;
+            /* 修改：注释颜色变浅 */
+            color: #70757a; 
             margin-bottom: 8px;
         }
         .affiliations {
             font-size: 1.1em;
-            color: #555;
+            /* 修改：机构颜色变浅 */
+            color: #70757a; 
             margin-bottom: 25px;
             line-height: 1.6;
         }
@@ -118,7 +125,8 @@
         }
         .caption {
             font-size: 0.95em;
-            color: #666;
+            /* 修改：图注颜色变柔和 */
+            color: #70757a; 
             margin-top: 15px;
             text-align: center; 
             line-height: 1.5;
@@ -127,43 +135,47 @@
         .section-title {
             font-size: 2em;
             font-weight: 600;
-            color: #242424;
+            color: #3c4043;
             border-bottom: 2px solid #eaeaea;
             padding-bottom: 10px;
             margin-top: 50px;
             margin-bottom: 20px;
         }
         
-        /* 修改：Introduction 标题样式参考图2 */
+        /* Introduction 标题 */
         .introduction-title {
             text-align: center;
             border-bottom: none;
-            color: #333333; /* 柔和的深灰色 */
-            font-weight: 600; /* 不要太粗 */
-            font-size: 2.2em; /* 稍微调大一点点 */
+            /* 修改：标题使用更柔和的深灰 */
+            color: #444444; 
+            font-weight: 600; 
+            font-size: 2.2em; 
             margin-bottom: 25px;
         }
         
-        /* 修改：Introduction 正文样式参考图2 */
+        /* Introduction 正文 */
         .introduction-content {
             margin-bottom: 40px;
             font-size: 1.05em; 
-            color: #4b5563; /* 比标题更浅的灰黑色，阅读更舒适 */
+            /* 修改：正文使用偏暖的浅灰黑色 */
+            color: #5f6368; 
             text-align: justify;
-            line-height: 1.75; /* 增加行高，提升大段文字的呼吸感 */
+            line-height: 1.8; /* 行高微调，增加呼吸感 */
             font-weight: 400;
         }
         
+        /* 子标题 (Key Characteristics 等) */
         .sub-section-title {
             font-size: 1.6em; 
             font-weight: 500; 
-            color: #333;
+            /* 修改：统一标题颜色 */
+            color: #444444;
             margin-top: 30px; 
             margin-bottom: 15px;
             text-align: center; 
         }
         
-        /* 保持特性卡片样式 */
+        /* 特性卡片样式 */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -175,12 +187,12 @@
             border: 1px solid #eaeaea;
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03); /* 降低卡片阴影的强度 */
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
         }
         .feature-icon {
             font-size: 2em;
@@ -190,13 +202,16 @@
         .feature-card h3 {
             font-size: 1.2em;
             margin: 0 0 10px 0;
-            color: #242424;
+            /* 修改：卡片小标题颜色 */
+            color: #444444; 
+            font-weight: 600;
         }
         .feature-card p {
             font-size: 0.95em;
-            color: #555;
+            /* 修改：卡片正文颜色，与 Introduction 一致 */
+            color: #5f6368; 
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -272,7 +287,7 @@
             
         </div>
 
-    </div>
+        </div>
 
 </body>
 </html>
