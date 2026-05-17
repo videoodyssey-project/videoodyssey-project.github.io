@@ -66,35 +66,62 @@
       transform: translateY(-2px);
     }
     
-    .btn-paper {
-      background: linear-gradient(135deg, #0d47a1, #1976d2);
-      box-shadow: 0 4px 15px rgba(25, 118, 210, 0.4);
-    }
+    .btn-paper { background: linear-gradient(135deg, #0d47a1, #1976d2); box-shadow: 0 4px 15px rgba(25, 118, 210, 0.4); }
     .btn-paper:hover { box-shadow: 0 6px 20px rgba(25, 118, 210, 0.6); }
 
-    .btn-arxiv {
-      background: linear-gradient(135deg, #b71c1c, #e53935);
-      box-shadow: 0 4px 15px rgba(229, 57, 53, 0.4);
-    }
+    .btn-arxiv { background: linear-gradient(135deg, #b71c1c, #e53935); box-shadow: 0 4px 15px rgba(229, 57, 53, 0.4); }
     .btn-arxiv:hover { box-shadow: 0 6px 20px rgba(229, 57, 53, 0.6); }
 
-    .btn-code {
-      background: linear-gradient(135deg, #00b09b, #10b981);
-      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
-    }
+    .btn-code { background: linear-gradient(135deg, #00b09b, #10b981); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); }
     .btn-code:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6); }
 
-    .btn-dataset {
-      background: linear-gradient(135deg, #f57f17, #f59e0b);
-      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
-    }
+    .btn-dataset { background: linear-gradient(135deg, #f57f17, #f59e0b); box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4); }
     .btn-dataset:hover { box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6); }
 
-    .btn-leaderboard {
-      background: linear-gradient(135deg, #b48600, #d4af37);
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-    }
+    .btn-leaderboard { background: linear-gradient(135deg, #b48600, #d4af37); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); }
     .btn-leaderboard:hover { box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6); }
+
+    /* ==========================================
+       Leaderboard 相关样式
+       ========================================== */
+    .leaderboard-table {
+      width: 100%;
+      margin-top: 20px;
+    }
+    .leaderboard-table th {
+      background-color: #f5f5f5;
+      text-align: center !important;
+      vertical-align: middle !important;
+      white-space: nowrap;
+    }
+    .leaderboard-table td {
+      text-align: center !important;
+      vertical-align: middle !important;
+    }
+    .leaderboard-table td.model-name {
+      text-align: left !important;
+      font-weight: 600;
+    }
+    .leaderboard-table td.model-name a {
+      color: #3273dc;
+      text-decoration: none;
+    }
+    .leaderboard-table td.model-name a:hover {
+      text-decoration: underline;
+    }
+    .leaderboard-table td.overall-score {
+      font-weight: bold;
+      color: #242424;
+      background-color: #fdfdfd;
+    }
+    .tab-btn.is-active {
+      background-color: #3273dc;
+      color: white;
+      border-color: #3273dc;
+    }
+    .table-container.is-hidden {
+      display: none;
+    }
   </style>
 </head>
 
@@ -198,9 +225,152 @@
           
           <h2 class="title is-3">Introduction</h2>
           <div class="content has-text-justified" style="font-size: 1.05em; line-height: 1.5;">
-            Real-world long video understanding requires models to perform continuous tracking, information integration and memory retention over massive temporal spans within extreme video durations. Mastering this intense cognitive load constitutes the fundamental bottleneck in long video understanding. While existing benchmarks have driven progress by scaling up video duration, their evaluation tasks often require comprehending only short and isolated video segments, falling short of capturing the challenge of ultra-long-context reasoning. To measure this cognitive load, we emphasize <i>continuous certificate length</i>, defined as the video length a human must continuously watch to definitively answer a given question. Driven by this metric, we introduce <b><i>VideoOdyssey</i></b>, a benchmark specifically designed for ultra-long-context and omni-modal video understanding. <i>VideoOdyssey</i> is characterized by three key features: <b>1) Extreme video duration and diversity:</b> spanning 11 domains and 54 subcategories with an average video duration of 109 minutes; <b>2) Comprehensive evaluation scenarios:</b> offering two subsets to address different research focuses, i.e., <i>VideoOdyssey-V</i> for probing the limits of visual understanding in MLLMs, and <i>VideoOdyssey-AV</i> for evaluating synchronized audio-visual understanding for omni-modal models; <b>3) Ultra-long and multi-level continuous certificates:</b> extending the average continuous certificate to 16 minutes for <i>VideoOdyssey-V</i> and 12.8 minutes for <i>VideoOdyssey-AV</i>. Crucially, we design 5 granular levels from seconds to hours, providing a comprehensive diagnostic tool to evaluate models across varying context lengths and cognitive loads. Extensive evaluations show that bottlenecks of current MLLMs extend beyond simple retrieval to include struggles with continuous reasoning across varying context lengths, fine-grained perception, and non-verbal omni-modal understanding. We hope <i>VideoOdyssey</i> will spur the development of next-generation MLLMs toward genuine real-world video understanding.
+            Real-world long video understanding requires models to perform continuous tracking, information integration and memory retention over massive temporal spans within extreme video durations.  Mastering this intense cognitive load constitutes the fundamental bottleneck in long video understanding. While existing benchmarks have driven progress by scaling up video duration, their evaluation tasks often require comprehending only short and isolated video segments, falling short of capturing the challenge of ultra-long-context reasoning. To measure this cognitive load, we emphasize <i>continuous certificate length</i>, defined as the video length a human must continuously watch to definitively answer a given question. Driven by this metric, we introduce <b><i>VideoOdyssey</i></b>, a benchmark specifically designed for ultra-long-context and omni-modal video understanding. <i>VideoOdyssey</i> is characterized by three key features: <b>1) Extreme video duration and diversity:</b> spanning 11 domains and 54 subcategories with an average video duration of 109 minutes; <b>2) Comprehensive evaluation scenarios:</b> offering two subsets to address different research focuses, i.e., <i>VideoOdyssey-V</i> for probing the limits of visual understanding in MLLMs, and <i>VideoOdyssey-AV</i> for evaluating synchronized audio-visual understanding for omni-modal models; <b>3) Ultra-long and multi-level continuous certificates:</b> extending the average continuous certificate to 16 minutes for <i>VideoOdyssey-V</i> and 12.8 minutes for <i>VideoOdyssey-AV</i>. Crucially, we design 5 granular levels from seconds to hours, providing a comprehensive diagnostic tool to evaluate models across varying context lengths and cognitive loads. Extensive evaluations show that bottlenecks of current MLLMs extend beyond simple retrieval to include struggles with continuous reasoning across varying context lengths, fine-grained perception, and non-verbal omni-modal understanding. We hope <i>VideoOdyssey</i> will spur the development of next-generation MLLMs toward genuine real-world video understanding.
           </div>
           
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="leaderboard">
+    <div class="container" style="margin-bottom: 2vh;">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          
+          <h2 class="title is-3 has-text-centered">Leaderboard</h2>
+          
+          <div class="content has-text-centered">
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+              Evaluation accuracy (%) on different <b>Continuous Certificate Length (CCL)</b> levels.<br>
+              Select a track below to view the results.
+            </p>
+            
+            <div class="buttons is-centered" style="margin-bottom: 30px;">
+              <button class="button tab-btn is-active" id="btn-odyssey-v" onclick="switchTab('odyssey-v')">
+                <span class="icon"><i class="fas fa-eye"></i></span>
+                <span>VideoOdyssey-V</span>
+              </button>
+              <button class="button tab-btn" id="btn-odyssey-av" onclick="switchTab('odyssey-av')">
+                <span class="icon"><i class="fas fa-headphones"></i></span>
+                <span>VideoOdyssey-AV</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="table-container" id="table-odyssey-v">
+            <table class="table is-bordered is-striped is-hoverable leaderboard-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Model</th>
+                  <th>Frames</th>
+                  <th>CCL [0, 0.5)</th>
+                  <th>CCL [0.5, 3)</th>
+                  <th>CCL [3, 15)</th>
+                  <th>CCL [15, 60)</th>
+                  <th>CCL [60, ∞)</th>
+                  <th class="overall-score">Overall</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="model-name"><a href="https://openai.com/gpt-4o" target="_blank">GPT-4o</a></td>
+                  <td>128</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td class="overall-score">-</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="model-name"><a href="https://deepmind.google/technologies/gemini/" target="_blank">Gemini 1.5 Pro</a></td>
+                  <td>128</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td class="overall-score">-</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="model-name"><a href="https://huggingface.co/lmms-lab/LLaVA-NeXT-Video-72B-Qwen2" target="_blank">LLaVA-Video</a></td>
+                  <td>Max</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td class="overall-score">-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-container is-hidden" id="table-odyssey-av">
+            <table class="table is-bordered is-striped is-hoverable leaderboard-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Model</th>
+                  <th>Frames</th>
+                  <th>CCL [0, 0.5)</th>
+                  <th>CCL [0.5, 3)</th>
+                  <th>CCL [3, 15)</th>
+                  <th>CCL [15, 60)</th>
+                  <th>CCL [60, ∞)</th>
+                  <th class="overall-score">Overall</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="model-name"><a href="https://openai.com/gpt-4o" target="_blank">GPT-4o</a></td>
+                  <td>64</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td class="overall-score">-</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="model-name"><a href="https://deepmind.google/technologies/gemini/" target="_blank">Gemini 1.5 Pro</a></td>
+                  <td>64</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td class="overall-score">-</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="model-name"><a href="https://github.com/VITA-MLLM/VITA" target="_blank">VITA-1.5-7B</a></td>
+                  <td>16</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td class="overall-score">-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="content has-text-centered" style="margin-top: 30px;">
+            <p>
+              🌟 <strong>Submit your model to our benchmark!</strong><br>
+              Email <a href="mailto:hehaichen41@gmail.com">hehaichen41@gmail.com</a> or <a href="mailto:zhoujiayi003@gmail.com">zhoujiayi003@gmail.com</a>.
+            </p>
+          </div>
+
         </div>
       </div>
     </div>
@@ -243,7 +413,7 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <pre><code>@article{anonymous2024videoodyssey,
-  title={VideoOdyssey: A Benchmark for Ultra-long-context and Omnimodal Video Understanding},
+  title={VideoOdyssey: A Benchmark for Ultra-long-context and Omni-modal Video Understanding},
   author={Anonymous Authors},
   journal={Under Review},
   year={2024}
@@ -258,6 +428,22 @@
       </p>
     </div>
   </footer>
+
+  <script>
+    function switchTab(tabId) {
+      // 1. 移除所有按钮的 active 状态
+      document.getElementById('btn-odyssey-v').classList.remove('is-active');
+      document.getElementById('btn-odyssey-av').classList.remove('is-active');
+      
+      // 2. 隐藏所有表格
+      document.getElementById('table-odyssey-v').classList.add('is-hidden');
+      document.getElementById('table-odyssey-av').classList.add('is-hidden');
+      
+      // 3. 激活点击的按钮和对应的表格
+      document.getElementById('btn-' + tabId).classList.add('is-active');
+      document.getElementById('table-' + tabId).classList.remove('is-hidden');
+    }
+  </script>
 
 </body>
 </html>
