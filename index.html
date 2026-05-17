@@ -31,8 +31,10 @@
       display: inline-block;
       margin-right: 10px;
     }
+    /* 修改：作者链接使用标准的学术蓝，悬停有下划线，像示例一样 */
     .author-block a {
       color: #3273dc;
+      text-decoration: none;
     }
     .author-block a:hover {
       text-decoration: underline;
@@ -46,6 +48,15 @@
       margin: 5px;
     }
     
+    /* 修改：为药丸按钮添加活泼的悬停效果，像示例一样 */
+    .publication-links .button {
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+    .publication-links .button:hover {
+      transform: translateY(-2px);
+      filter: brightness(110%);
+    }
+
     /* 特性卡片内的图标大小 */
     .feature-icon {
       font-size: 2.5rem;
@@ -105,37 +116,41 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <a href="#" class="external-link button is-normal is-rounded is-info">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
                     <span>Paper</span>
                   </a>
                 </span>
+                
                 <span class="link-block">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <a href="#" class="external-link button is-normal is-rounded is-danger">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
                   </a>
                 </span>
+                
                 <span class="link-block">
-                  <a href="https://github.com/videoodyssey-project" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/videoodyssey-project" class="external-link button is-normal is-rounded is-success">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
                   </a>
                 </span>
+                
                 <span class="link-block">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <a href="#" class="external-link button is-normal is-rounded is-warning">
                     <span class="icon">
                       <p style="font-size:18px">🤗</p>
                     </span>
                     <span>Dataset</span>
                   </a>
                 </span>
+                
                 <span class="link-block">
                   <a href="#leaderboard" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
