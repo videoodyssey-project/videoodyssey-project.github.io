@@ -121,6 +121,101 @@
     .table-container.is-hidden {
       display: none;
     }
+
+    /* ==========================================
+       轮播图 (Carousel) 滑动窗口相关样式
+       ========================================== */
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 1px solid #f0f0f0;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      padding: 20px 60px 40px 60px; /* 左右留给箭头，底部留给圆点 */
+      overflow: hidden;
+    }
+    .carousel-track-container {
+      overflow: hidden;
+      width: 100%;
+      border-radius: 8px;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      text-align: center;
+    }
+    .carousel-slide img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      border-radius: 4px;
+    }
+    .carousel-caption {
+      font-size: 1.1em;
+      color: #555;
+      margin-top: 15px;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: calc(50% - 15px); /* 居中微调 */
+      transform: translateY(-50%);
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #4a4a4a;
+      transition: all 0.2s ease;
+    }
+    .carousel-btn:hover {
+      background: #fdfdfd;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      color: #1a1a1a;
+    }
+    .carousel-btn.prev {
+      left: 15px;
+    }
+    .carousel-btn.next {
+      right: 15px;
+    }
+    .carousel-dots {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #f0f0f0;
+      border: 1px solid #dcdcdc;
+      cursor: pointer;
+      padding: 0;
+      transition: background-color 0.2s ease;
+    }
+    .carousel-dot.active {
+      background-color: #888888;
+      border-color: #888888;
+    }
   </style>
 </head>
 
@@ -340,10 +435,6 @@
     </div>
   </section>
 
-  <!-- ==========================================
-       新增的大章节：VideoOdyssey
-       包含统计图、对比表格表、气泡图
-       ========================================== -->
   <section class="hero is-light is-small">
     <div class="hero-body has-text-centered">
       <h1 class="title is-3">VideoOdyssey</h1>
@@ -353,7 +444,6 @@
   <section class="section" id="videoodyssey-details">
     <div class="container" style="margin-bottom: 2vh;">
       
-      <!-- 子模块 1: Benchmark Statistics -->
       <div class="columns is-centered has-text-centered" style="margin-top: 20px;">
         <div class="column is-11">
           <h3 class="title is-4">Benchmark Statistics</h3>
@@ -365,20 +455,17 @@
         </div>
       </div>
 
-      <!-- 子模块 2: Comparison with Existing Benchmarks -->
       <div class="columns is-centered has-text-centered" style="margin-top: 40px;">
         <div class="column is-11">
           <h3 class="title is-4">Comparison with Existing Benchmarks</h3>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <!-- 这里放你截取的高清表格图片 -->
               <img src="benchmark_comparison.png" alt="Benchmark Comparison Table" width="80%" />
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 子模块 3: Continuous Certificate Length across Various Benchmarks -->
       <div class="columns is-centered has-text-centered" style="margin-top: 40px;">
         <div class="column is-11">
           <h3 class="title is-4">Continuous Certificate Length across Various Benchmarks</h3>
@@ -391,9 +478,133 @@
 
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="benchmark_bubble_chart.png" alt="Benchmark Comparison Bubble Chart" width="80%" style="margin: 0 auto; display: block;" />
+              <img src="benchmark_bubble_chart.png" alt="Benchmark Comparison Bubble Chart" width="45%" style="margin: 0 auto; display: block;" />
             </div>
           </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-3">Experimental Results</h1>
+    </div>
+  </section>
+
+  <section class="section" id="experimental-results">
+    <div class="container" style="margin-bottom: 2vh;">
+
+      <div class="columns is-centered has-text-centered" style="margin-top: 20px;">
+        <div class="column is-11">
+          <h3 class="title is-4">4.1 Performance across different task types</h3>
+          
+          <div class="carousel-wrapper">
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="carousel-track-container">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img src="main_result_v.png" alt="Task Type Performance 1">
+                  <p class="carousel-caption">Performance across different task types on <i>VideoOdyssey-V</i>.</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="main_result_av.png" alt="Task Type Performance 2">
+                  <p class="carousel-caption">Performance across different task types on <i>VideoOdyssey-V</i>.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+              <button class="carousel-dot active"></button>
+              <button class="carousel-dot"></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered" style="margin-top: 40px;">
+        <div class="column is-11">
+          <h3 class="title is-4">4.2 Performance across different video domains</h3>
+          
+          <div class="carousel-wrapper">
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="carousel-track-container">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img src="radar_v.png" alt="Video Domain Performance 1">
+                  <p class="carousel-caption">Performance across different video domains on <i>VideoOdyssey-V</i>.</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="radar_av.png" alt="Video Domain Performance 2">
+                  <p class="carousel-caption">Performance across different task types on <i>VideoOdyssey-AV</i>.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+              <button class="carousel-dot active"></button>
+              <button class="carousel-dot"></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered" style="margin-top: 40px;">
+        <div class="column is-11">
+          <h3 class="title is-4">4.3 Performance across different input modalities</h3>
+          
+          <div class="carousel-wrapper">
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="carousel-track-container">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img src="diff_inputs_v.png" alt="Input Modalities Performance 1">
+                  <p class="carousel-caption">Impact of different input modalities on <i>VideoOdyssey-V</i>.</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="diff_inputs_av.png" alt="Input Modalities Performance 2">
+                  <p class="carousel-caption">Impact of different input modalities on <i>VideoOdyssey-AV</i>.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+              <button class="carousel-dot active"></button>
+              <button class="carousel-dot"></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered" style="margin-top: 40px;">
+        <div class="column is-11">
+          <h3 class="title is-4">4.4 Human performance across CCL</h3>
+          
+          <div class="carousel-wrapper">
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="carousel-track-container">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img src="human_ccl_v.png" alt="Human Performance 1">
+                  <p class="carousel-caption">Human performance across continuous certificate length levels on <i>VideoOdyssey-V</i>.</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="human_ccl_av.png" alt="Human Performance 2">
+                  <p class="carousel-caption">Human performance across continuous certificate length levels on <i>VideoOdyssey-AV</i>.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+              <button class="carousel-dot active"></button>
+              <button class="carousel-dot"></button>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -426,19 +637,58 @@
   </footer>
 
   <script>
+    // 排行榜 Tab 切换逻辑
     function switchTab(tabId) {
-      // 1. 移除所有按钮的 active 状态
       document.getElementById('btn-odyssey-v').classList.remove('is-active');
       document.getElementById('btn-odyssey-av').classList.remove('is-active');
       
-      // 2. 隐藏所有表格
       document.getElementById('table-odyssey-v').classList.add('is-hidden');
       document.getElementById('table-odyssey-av').classList.add('is-hidden');
       
-      // 3. 激活点击的按钮和对应的表格
       document.getElementById('btn-' + tabId).classList.add('is-active');
       document.getElementById('table-' + tabId).classList.remove('is-hidden');
     }
+
+    // 轮播图 (Carousel) 滑动逻辑
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousels = document.querySelectorAll('.carousel-wrapper');
+      
+      carousels.forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextBtn = carousel.querySelector('.carousel-btn.next');
+        const prevBtn = carousel.querySelector('.carousel-btn.prev');
+        const dotsNav = carousel.querySelector('.carousel-dots');
+        const dots = Array.from(dotsNav.children);
+
+        let currentIndex = 0;
+
+        const updateCarousel = (index) => {
+          track.style.transform = `translateX(-${index * 100}%)`;
+          dots.forEach(dot => dot.classList.remove('active'));
+          dots[index].classList.add('active');
+          currentIndex = index;
+        };
+
+        nextBtn.addEventListener('click', () => {
+          let nextIndex = currentIndex + 1;
+          if (nextIndex >= slides.length) nextIndex = 0; 
+          updateCarousel(nextIndex);
+        });
+
+        prevBtn.addEventListener('click', () => {
+          let prevIndex = currentIndex - 1;
+          if (prevIndex < 0) prevIndex = slides.length - 1; 
+          updateCarousel(prevIndex);
+        });
+
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            updateCarousel(index);
+          });
+        });
+      });
+    });
   </script>
 
 </body>
